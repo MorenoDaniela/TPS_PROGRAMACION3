@@ -1,11 +1,16 @@
 <?php
-
+/**
+ * Clase base Pais
+ */
 class Pais
 {
     public $nombre;
     public $capital;
     public $region;
 
+    /**
+     * Constructor de la clase Pais, recibe 3 parametros.
+     */
     public function __construct ($name,$capital,$region)
     {
         $this->nombre=$name;
@@ -13,37 +18,13 @@ class Pais
         $this->region=$region;
     }
 
+    /**
+     * Metodo de instancia que muestra los atributos de la clase.
+     */
     public function MostrarAtributos()
     {
         return "El pais {$this->nombre} tiene de capital a {$this->capital} y su region es {$this->region} ";
     }
     
-    public function BuscarEspañol()
-    {
-        $string = "Los paises de habla español son: ";
-        if ($this->idioma=="Spanish");
-        {
-            $string .= "{$this->nombre}";
-            echo $string;
-        }
-    }
-    
 }
-/*
-    public function CargarAtributos()
-    {
-        use NNV\RestCountries;
-
-        $restCountries = new RestCountries;
-
-        //$paises = $restCountries->all();
-        echo $restCountries->fields(["name", "capital", "region"])->all();
-    }
-use NNV\RestCountries;
-
-$restCountries = new RestCountries;
-
-$paises = $restCountries->all();
-
-echo json_encode($paises);*/
 

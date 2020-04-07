@@ -6,27 +6,28 @@ include './paisesAmericanos.php';
 include './mundo.php';
 
 use NNV\RestCountries;
-
 $restCountries = new RestCountries;
+
 $paises = $restCountries->fields(["name", "capital", "region"])->all();
 $array = json_encode($paises);
 $prueba = json_decode($array);
 
 $mundo = new Mundo($prueba);
 $mundo->__construct($prueba);
+
+//Muestro todos los paises
 echo $mundo->MostrarMundo();
+//Muestro solo los paises que su capital sea Buenos aires
+echo $mundo->BuscarNombreCapitalRegion("capital","Buenos Aires");
+//Muestro solo los paises cuya region sea Asia
+echo $mundo->BuscarNombreCapitalRegion("region","Asia");
+//Muestro todos los paises que su nombre sea Bahamas
+echo $mundo->BuscarNombreCapitalRegion("name","Bahamas");
+
 
 $paisesAmericanos = $restCountries->fields(["name", "capital", "region","languages","callingCodes","population"])->byRegion("americas");
 $encodeAmerica = json_encode($paisesAmericanos);
 $arrayAmerica = json_decode($encodeAmerica);
-
-/*
-foreach($prueba as $obj)
-{
-    $pais = new Pais ("nombre","capital","region");
-    $pais->__construct($obj->name,$obj->capital,$obj->region);
-    echo $pais->MostrarAtributos();
-}*/
 
 foreach ($arrayAmerica as $paisAmericano)
 {
@@ -35,6 +36,9 @@ foreach ($arrayAmerica as $paisAmericano)
     echo $paisA->MostrarAtributos();
     echo $paisA->MostrarPopulation();
 }
+
+echo PaisesAmericanos::MetodoEstatico();
+
 
 
 /*
