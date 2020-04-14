@@ -1,19 +1,19 @@
 <?php
 
-require_once __DIR__ .'/vendor/autoload.php';
+//require_once __DIR__ .'/vendor/autoload.php';
 include_once './pais.php';
 include './paisesAmericanos.php';
 include './mundo.php';
 
-use NNV\RestCountries;
-$restCountries = new RestCountries;
+//use NNV\RestCountries;
+//$restCountries = new RestCountries;
 
-$paises = $restCountries->fields(["name", "capital", "region"])->all();
-$array = json_encode($paises);
-$prueba = json_decode($array);
+//$paises = $restCountries->fields(["name", "capital", "region"])->all();
+//$array = json_encode($paises);
+//$prueba = json_decode($array);
 
-$mundo = new Mundo($prueba);
-$mundo->__construct($prueba);
+$mundo = new Mundo();
+//$mundo->__construct();
 
 //Muestro todos los paises
 echo $mundo->MostrarMundo();
@@ -23,8 +23,12 @@ echo $mundo->BuscarNombreCapitalRegion("capital","Buenos Aires");
 echo $mundo->BuscarNombreCapitalRegion("region","Asia");
 //Muestro todos los paises que su nombre sea Bahamas
 echo $mundo->BuscarNombreCapitalRegion("name","Bahamas");
+//Muestro solo los Americanos
+echo $mundo->MostrarPaisesAmericanos();
+//Llamada a método estático
+echo PaisesAmericanos::MetodoEstatico();
 
-
+/*
 $paisesAmericanos = $restCountries->fields(["name", "capital", "region","languages","callingCodes","population"])->byRegion("americas");
 $encodeAmerica = json_encode($paisesAmericanos);
 $arrayAmerica = json_decode($encodeAmerica);
@@ -37,9 +41,9 @@ foreach ($arrayAmerica as $paisAmericano)
     echo $paisA->MostrarPopulation();
 }
 
-echo PaisesAmericanos::MetodoEstatico();
 
 
+*/
 
 /*
 use Monolog\Logger;
