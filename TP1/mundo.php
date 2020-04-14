@@ -63,8 +63,8 @@ class Mundo
         {
             if ($obj->$buscar==$lugar)
             {
-                $pais = new Pais ("nombre","capital","region");
-                $pais->__construct($obj->name,$obj->capital,$obj->region);
+                $pais = new Pais ($obj->name,$obj->capital,$obj->region);
+                //$pais->__construct($obj->name,$obj->capital,$obj->region);
                 echo "{$pais->MostrarAtributos()}, <br>";
             }
         } 
