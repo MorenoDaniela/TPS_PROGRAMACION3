@@ -1,0 +1,2 @@
+O:4:"User":6:{s:4:"name";s:6:"matias";s:8:"lastName";s:4:"moll";s:4:"pass";s:4:"1111";s:5:"email";s:14:"mati@gmail.com";s:5:"phone";s:9:"111111111";s:4:"type";s:5:"false";}
+O:4:"User":6:{s:4:"name";s:7:"daniela";s:8:"lastName";s:6:"moreno";s:4:"pass";s:4:"1234";s:5:"email";s:26:"denu.moreno.1990@gmail.com";s:5:"phone";s:10:"1122504709";s:4:"type";s:4:"true";}
